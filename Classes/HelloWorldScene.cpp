@@ -139,20 +139,19 @@ bool HelloWorld::init()
 
 	i = 0;
 	j = 255;
-
 	return true;
 }
 void HelloWorld::update(float delta)
 {
 	Vec2 pos = hydra->getPosition();
 	if (hydra->getPositionX() >= origin.x + 200 && hydra->getPositionY()>=visibleSize.height-200-origin.y )
-		pos -= Vec2(2.0f, 0.0f);
+		pos -= Vec2(vec, 0.0f);
 	if (hydra->getPositionX() <= origin.x + 200 &&hydra->getPositionY() >= origin.y + 200)
-		pos -= Vec2(0.0f, 2.0f);
+		pos -= Vec2(0.0f, vec);
 	if (hydra->getPositionX() <= visibleSize.width-origin.x - 200 && hydra->getPositionY() <= origin.y + 200)
-		pos += Vec2(2.0f, 0.0f);
+		pos += Vec2(vec, 0.0f);
 	if (hydra->getPositionX() >= visibleSize.width - origin.x - 200 && hydra->getPositionY() <= visibleSize.height - 200 - origin.y)
-		pos += Vec2(0.0f, 2.0f);
+		pos += Vec2(0.0f, vec);
 	hydra->setPosition(pos);
 	/*
 	i++;

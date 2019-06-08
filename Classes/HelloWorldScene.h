@@ -46,6 +46,7 @@ public:
 	cocos2d::Sprite* hydra;
 	int i;
 	int j;
+	int vec;
 	cocos2d::Size visibleSize;
 	cocos2d::Vec2 origin;
 };
