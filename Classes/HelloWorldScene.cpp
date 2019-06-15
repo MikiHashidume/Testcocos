@@ -132,18 +132,25 @@ bool HelloWorld::init()
 	hydra = Sprite::create("Hydra.png");
 	hydra->setPosition(Vec2(visibleSize.width - origin.x - 200, visibleSize.height - origin.y - 200));
 	hydra->setScale(0.1f);
+	hydra->setRotation(90);
+
+
 
 	this->addChild(hydra, 2);
 	//update‚ðŒÄ‚Ño‚·
 	this->scheduleUpdate();
 
-	i = 0;
+	/*i = 0;
 	j = 255;
+	vec = 30;*/
+	f = false;
+
 	return true;
 }
 void HelloWorld::update(float delta)
 {
-	Vec2 pos = hydra->getPosition();
+	i++;
+	/*Vec2 pos = hydra->getPosition();
 	if (hydra->getPositionX() >= origin.x + 200 && hydra->getPositionY()>=visibleSize.height-200-origin.y )
 		pos -= Vec2(vec, 0.0f);
 	if (hydra->getPositionX() <= origin.x + 200 &&hydra->getPositionY() >= origin.y + 200)
@@ -152,7 +159,7 @@ void HelloWorld::update(float delta)
 		pos += Vec2(vec, 0.0f);
 	if (hydra->getPositionX() >= visibleSize.width - origin.x - 200 && hydra->getPositionY() <= visibleSize.height - 200 - origin.y)
 		pos += Vec2(0.0f, vec);
-	hydra->setPosition(pos);
+	hydra->setPosition(pos);*/
 	/*
 	i++;
 	if (i > 60)
@@ -161,7 +168,20 @@ void HelloWorld::update(float delta)
 		hydra->setOpacity(j);
 		i = 0;
 	}*/
+	/*hydra->setAnchorPoint(Vec2(1, 1));
+	hydra->setRotation(i);
+	hydra->setColor(Color3B(i, i*2, (i*i)));*/
+	Vec2 pos = hydra->getPosition();
+	if(hydra->getPositionX()<=origin.x+200)
+	{
+	  f =true;
+	}
+	else
+	{
+		f =false;
+	}
 
+	hydra->setPosition(pos);
 }
 
 
